@@ -5,14 +5,24 @@ Look at each file to see what props need to be passed.
 */
 
 // Import the state hook
-import React from "react";
+import React, {useState} from "react";
+
 // Import the Posts (plural!) and SearchBar components, since they are used inside App component
+// import LikeSection from "./components/Posts/LikeSection"
+// import Post from "./components/Posts/Post"
+// import PostHeader from "./components/Posts/PostHeader"
+import Posts from "./components/Posts/Posts"
+
+import SearchBar from "./components/SearchBar/SearchBar"
 // Import the dummyData
 import "./App.css";
+import dummyData from "./dummy-data"
+
 
 const App = () => {
   // Create a state called 'posts' to hold the list of posts, initializing to dummyData.
   // To make the search bar work (which is stretch) we'd need another state to hold the search term.
+  const [posts, setPosts] = useState(dummyData)
 
   const likePost = postId => {
     // This function is passed into nested components using props, to allow them to update application state.
