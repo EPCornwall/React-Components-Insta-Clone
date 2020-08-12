@@ -24,14 +24,14 @@ const App = () => {
     // The callback passed into `posts.map()` performs the following logic:
     //  - if the `id` of the post matches `postId`, return a new post object containing an increased 'likes' count.
     //  - otherwise just return the post object unchanged.
-    setPosts(posts.map(evt =>{
-      if(postId === posts.id){
-        return posts.likes = posts.likes +1
+    setPosts(
+      posts.map((item) => {
+      if (item.id === postId) {
+        return {...item, likes : item.likes + 1}
       }
-      // else{
-      //   return posts.likes = posts.likes
-      // }
-    }))
+        return item;
+    })
+    );
   };
 
   return (
